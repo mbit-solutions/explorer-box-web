@@ -318,3 +318,14 @@ $(function() {
     
     
 });
+
+function sendEmail(encodedEmail) {
+    var email = '';
+    for (i = 0; i < encodedEmail.length;)
+    {
+        var letter = encodedEmail.charAt(i) + encodedEmail.charAt(i + 1);
+        email += String.fromCharCode(parseInt(letter, 16));
+        i += 2;
+    }
+    location.href = email;
+}
